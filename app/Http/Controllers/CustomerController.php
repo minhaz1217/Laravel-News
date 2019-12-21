@@ -18,11 +18,13 @@ class CustomerController extends Controller
             'email' => 'required|email',
             'active'=>'required'
             ]);
-        $customer = new Customer();
-        $customer->name = request('name');
-        $customer->email = request('email');
-        $customer->active = request('active');
-        $customer->save();
+
+        Customer::create($data);
+//        $customer = new Customer();
+//        $customer->name = request('name');
+//        $customer->email = request('email');
+//        $customer->active = request('active');
+//        $customer->save();
         return back();
         //dd(request('name'));
     }
