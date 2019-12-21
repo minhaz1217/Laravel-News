@@ -8,7 +8,8 @@
     <form class="form-signin" action="/customers" method="POST">
         <h1 class="h3 mb-3 font-weight-normal">Add a customer</h1>
         <label for="inputEmail" class="sr-only">Name</label>
-        <input type="text" class="form-control" name="name" placeholder="Customer name" required autofocus>
+        <p class="alert-danger">{{$errors->first('name')}}</p>
+        <input type="text" class="form-control" name="name" placeholder="Customer name" autofocus>
 {{--        <label for="inputPassword" class="sr-only">Password</label>--}}
 {{--        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>--}}
 {{--        <div class="checkbox mb-3">--}}
