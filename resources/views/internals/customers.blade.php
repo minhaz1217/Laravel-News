@@ -9,7 +9,10 @@
         <h1 class="h3 mb-3 font-weight-normal">Add a customer</h1>
         <label for="inputEmail" class="sr-only">Name</label>
         <p class="alert-danger">{{$errors->first('name')}}</p>
-        <input type="text" class="form-control" name="name" placeholder="Customer name" autofocus>
+        <input type="text" class="form-control" name="name" placeholder="Customer name" value="{{old('name')}}" autofocus>
+
+        <p class="alert-danger">{{$errors->first('email')}}</p>
+        <input type="text" class="form-control" name="email" placeholder="Customer email" value="{{old('email')}}" autofocus>
 {{--        <label for="inputPassword" class="sr-only">Password</label>--}}
 {{--        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>--}}
 {{--        <div class="checkbox mb-3">--}}
@@ -25,7 +28,7 @@
     <div class="">
         <ul>
             @foreach ($customers as $customer)
-                <li>{{$customer->name}}</li>
+                <li>{{$customer->name}}({{$customer->email}})</li>
             @endforeach
         </ul>
     </div>
