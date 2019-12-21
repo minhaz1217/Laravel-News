@@ -2,6 +2,6 @@
 
 @section("content")
     <div class="">
-        <h1>This is the About us Page</h1>
+        <h1>This is the Contact Page</h1>
     </div>
 @endsection
