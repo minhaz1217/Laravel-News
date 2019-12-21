@@ -23,16 +23,34 @@
 {{--            </label>--}}
 {{--        </div>--}}
         <br>
+        <div class="form-group">
+            <select name="active" class="form-control">
+                <option value="" disabled>Select Customer Status</option>
+                <option value="1">Active</option>
+                <option value="0">Inactive</option>
+            </select>
+        </div>
+        <br>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Add Customer</button>
         <p class="mt-5 mb-3 text-muted">&copy; 2019</p>
         @csrf
     </form>
-
-    <div class="">
-        <ul>
-            @foreach ($customers as $customer)
-                <li>{{$customer->name}}({{$customer->email}})</li>
-            @endforeach
-        </ul>
+    <div class="row">
+        <div class="col-6">
+            <h2>Active Customers</h2>
+            <ul>
+                @foreach ($activeCustomers as $customer)
+                    <li>{{$customer->name}}({{$customer->email}}) ({{$customer->active}})</li>
+                @endforeach
+            </ul>
+        </div>
+        <div class="col-6">
+            <h2>Inactive Customers</h2>
+            <ul>
+                @foreach ($inActiveCustomers as $customer)
+                    <li>{{$customer->name}}({{$customer->email}}) ({{$customer->active}})</li>
+                @endforeach
+            </ul>
+        </div>
     </div>
 @endsection
