@@ -8,7 +8,7 @@ class Customer extends Model
 {
     // fillable example
 //    protected $fillable = ['name', 'email', 'active'];
-    
+
     // protection with guarded
     protected $guarded = [];
     public function scopeActive($query){
@@ -16,5 +16,9 @@ class Customer extends Model
     }
     public function scopeInactive($query){
         return $query->where('active',0);
+    }
+
+    public function company(){
+        return $this->belongsTo(Company::class);
     }
 }
