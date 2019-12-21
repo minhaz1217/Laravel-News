@@ -24,13 +24,4 @@ Route::get("/hellocontroller", "HelloController@hello");
 Route::get("/addcontroller", "AddController@index");
 Route::get("/about", ['uses' => 'AboutController@about', 'as' =>'about']);
 Route::get("/about2", ['uses' => 'AboutController@about2', 'as' =>'about']);
-Route::get("/customer", 
-function(){
-    $customers = [
-        'Minhazul',
-        'Hayat',
-        'Khan'
-    ];
-    return view("internals.customers", ['customers'=> $customers]);
-}
-    );
+Route::get("/customer", "CustomerController@list");
