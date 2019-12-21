@@ -28,3 +28,5 @@ Route::get("/customers", "CustomerController@list");
 Route::get("/contact", function(){
     return view("contact");
 });
+
+Route::post( '/customers', 'CustomerController@store');

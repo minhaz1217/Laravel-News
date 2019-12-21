@@ -1,13 +1,11 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-    <title>Laravel</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="Minhazul Hayat Khan with the help of bootstrap">
-    <meta name="generator" content="Jekyll v3.8.6">
-    <title>Sticky Footer Navbar Template · Bootstrap</title>
+    <title>Minhaz Laravel</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/sticky-footer-navbar/">
 
