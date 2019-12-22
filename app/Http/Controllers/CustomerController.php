@@ -28,8 +28,9 @@ class CustomerController extends Controller
         Customer::create($data);
         return redirect('/customers');
     }
-    public function show($customer){
-        $customer = Customer::where('id', $customer)->firstOrFail();
+    public function show(Customer $customer){
+
+        //$customer = Customer::where('id', $customer)->firstOrFail();
         return view("customers.show", compact('customer'));
     }
 }
