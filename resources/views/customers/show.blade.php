@@ -10,6 +10,12 @@
         <h2>Company: {{$customer->company->name}}</h2>
         <h2>Active: {{$customer->active}}</h2>
         <h2><a href="/customers/{{$customer->id}}/edit">Edit</a> </h2>
+        <form action="/customers/{{$customer->id}}" method="POST">
+            @method("DELETE")
+            @csrf
+            <button type="submit" class="btn btn-danger">Delete</button>
+
+        </form>
     </div>
 
 </div>
