@@ -1,4 +1,5 @@
-@extends("layout.main")
+@extends('layouts.app')
+
 @section('title', "Add Customer")
 @section("content")
 <form class="form-signin" action="/customers" method="POST">

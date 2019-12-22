@@ -36,3 +36,6 @@ Route::delete( '/customers/{customer}', 'CustomerController@destroy');
 
 Route::get("/contact", "ContactFormController@create");
 Route::post("/contact", "ContactFormController@store");
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
