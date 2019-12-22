@@ -41,3 +41,6 @@ Route::post("/contact", "ContactFormController@store");
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get("/middleware", function(){
+    return "<h1>This is the middleware page</h1>";
+})->middleware('custom_middleware');
