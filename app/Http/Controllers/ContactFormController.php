@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ContactFormMail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class ContactFormController extends Controller
 {
@@ -17,5 +19,7 @@ class ContactFormController extends Controller
         ]);
 
         //send the email
+        Mail::to('test@test.com')->send(new ContactFormMail($data));
+        return redirect('/contact');
     }
 }
