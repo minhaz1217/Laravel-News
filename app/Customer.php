@@ -11,6 +11,16 @@ class Customer extends Model
 
     // protection with guarded
     protected $guarded = [];
+
+    // Accessor get<column_name>Attribute
+    public function getActiveAttribute($attribute){
+        return [
+            0=>'Inactive',
+            1=>'Active'
+        ][$attribute];
+    }
+
+    // SCOPING scope<column_name>
     public function scopeActive($query){
         return $query->where('active',1);
     }

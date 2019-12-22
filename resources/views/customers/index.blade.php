@@ -15,8 +15,11 @@
         <div class="col-2">
             {{$customer->id}}
         </div>
-        <div class="col-4">
+        <div class="col-2">
             {{$customer->name}}
+        </div>
+        <div class="col-2">
+            {{$customer->company->name}}
         </div>
         <div class="col-4">
             {{$customer->email}}
