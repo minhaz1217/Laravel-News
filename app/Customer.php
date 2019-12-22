@@ -12,12 +12,15 @@ class Customer extends Model
     // protection with guarded
     protected $guarded = [];
 
+
+    //settingup default values
+    protected $attributes = [
+      'active' =>1
+    ];
+
     // Accessor get<column_name>Attribute
     public function getActiveAttribute($attribute){
-        return [
-            0=>'Inactive',
-            1=>'Active'
-        ][$attribute];
+        return $this->activeOptions()[$attribute];
     }
 
     // SCOPING scope<column_name>
@@ -30,5 +33,11 @@ class Customer extends Model
 
     public function company(){
         return $this->belongsTo(Company::class);
+    }
+    public function activeOptions(){
+        return [
+            1=>'Active',
+            0=>'Inactive'
+        ];
     }
 }

@@ -18,15 +18,17 @@
 <div class="form-group">
     <select name="active" class="form-control">
         <option value="" disabled>Select Customer Status</option>
-        <option value="1">Active</option>
-        <option value="0">Inactive</option>
+
+        @foreach($customer->activeOptions() as $activeOptionKey => $activeOptionValue)
+            <option value="{{$activeOptionKey}}" {{$customer->active == $activeOptionValue ? 'selected':''}}>{{$activeOptionValue}}</option>
+        @endforeach
     </select>
 </div>        <br>
 <div class="form-group">
     <select name="company_id" class="form-control">
         <option value="" disabled>Select Customer Company</option>
         @foreach($companies as $company)
-            <option value="{{$company->id}}">{{$company->name}}</option>
+            <option value="{{$company->id}}" {{$company->id == $customer->company->id ? 'selected':''}} >{{$company->name}}</option>
         @endforeach
     </select>
 </div>
