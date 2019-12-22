@@ -24,10 +24,11 @@ Route::get("/hellocontroller", "HelloController@hello");
 Route::get("/addcontroller", "AddController@index");
 Route::get("/about", ['uses' => 'AboutController@about', 'as' =>'about']);
 Route::get("/about2", ['uses' => 'AboutController@about2', 'as' =>'about']);
-Route::get("/customers", "CustomerController@index");
-Route::get("/customers/create", "CustomerController@create");
 Route::get("/contact", function(){
     return view("contact");
 });
 
+Route::get("/customers", "CustomerController@index");
 Route::post( '/customers', 'CustomerController@store');
+Route::get("/customers/create", "CustomerController@create");
+Route::get( '/customers/{customer}', 'CustomerController@show');
