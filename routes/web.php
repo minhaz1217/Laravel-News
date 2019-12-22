@@ -32,6 +32,8 @@ Route::get( '/customers/{customer}', 'CustomerController@show');
 Route::patch( '/customers/{customer}', 'CustomerController@update');
 Route::get( '/customers/{customer}/edit', 'CustomerController@edit')->middleware('auth');
 Route::delete( '/customers/{customer}', 'CustomerController@destroy')->middleware('auth');
+//Route::get( '/customers/{customer}/edit', 'CustomerController@edit')->middleware('auth');
+//Route::delete( '/customers/{customer}', 'CustomerController@destroy')->middleware('auth');
 
 
 Route::get("/contact", "ContactFormController@create");
