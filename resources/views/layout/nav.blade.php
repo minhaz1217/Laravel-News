@@ -15,6 +15,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="/customers" >Customer List</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/customers/create" >New Customer</a>
+            </li>
             <li  class="nav-item">
                 <a class="nav-link" disabled>
                     Welcome {{$username}}
