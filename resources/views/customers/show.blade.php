@@ -9,6 +9,7 @@
         <h2>Email: {{$customer->email}}</h2>
         <h2>Company: {{$customer->company->name}}</h2>
         <h2>Active: {{$customer->active}}</h2>
+        <h2><a href="/customers/{{$customer->id}}/edit">Edit</a> </h2>
     </div>
 
 </div>

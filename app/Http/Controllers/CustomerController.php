@@ -29,8 +29,14 @@ class CustomerController extends Controller
         return redirect('/customers');
     }
     public function show(Customer $customer){
-
         //$customer = Customer::where('id', $customer)->firstOrFail();
         return view("customers.show", compact('customer'));
+    }
+    public function edit(Customer $customer){
+        $companies = Company::all();
+        return view('customers.edit',compact('customer', 'companies'));
+    }
+    public function update(Customer $customer){
+
     }
 }
