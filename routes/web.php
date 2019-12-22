@@ -24,9 +24,6 @@ Route::get("/hellocontroller", "HelloController@hello");
 Route::get("/addcontroller", "AddController@index");
 Route::get("/about", ['uses' => 'AboutController@about', 'as' =>'about']);
 Route::get("/about2", ['uses' => 'AboutController@about2', 'as' =>'about']);
-Route::get("/contact", function(){
-    return view("contact");
-});
 
 Route::get("/customers", "CustomerController@index");
 Route::post( '/customers', 'CustomerController@store');
@@ -35,3 +32,7 @@ Route::get( '/customers/{customer}', 'CustomerController@show');
 Route::patch( '/customers/{customer}', 'CustomerController@update');
 Route::get( '/customers/{customer}/edit', 'CustomerController@edit');
 Route::delete( '/customers/{customer}', 'CustomerController@destroy');
+
+
+Route::get("/contact", "ContactFormController@create");
+Route::post("/contact", "ContactFormController@store");
