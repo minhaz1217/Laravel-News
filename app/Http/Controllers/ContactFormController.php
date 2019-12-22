@@ -20,6 +20,9 @@ class ContactFormController extends Controller
 
         //send the email
         Mail::to('test@test.com')->send(new ContactFormMail($data));
-        return redirect('/contact');
+
+        //session()->flash('message', "Message Sent Successfully.");
+
+        return redirect('/contact')->with('message', 'Message Sent Successfully.');
     }
 }

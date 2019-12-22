@@ -3,9 +3,17 @@
 @section('title', "Contact us")
 @section("content")
     <br><br>
+
+
     <div class="row">
         <div class="col-2"></div>
     <div class="col-8">
+        <h1>Contact Us</h1>
+        @if(session()->has('message'))
+            <div class="alert alert-success" role="alert">
+                <string>{{session()->get('message')}}</string>
+            </div>
+        @endif
         <form action="/contact" method="POST">
             <div class="mb-3">
                 <label for="name">Name</label>

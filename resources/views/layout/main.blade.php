@@ -36,6 +36,7 @@
 
 <header>
 @include('layout.nav', ['username'=>'minhazul.com'])
+
 </header>
 
 <!-- Begin page content -->
