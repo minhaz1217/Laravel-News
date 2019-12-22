@@ -38,5 +38,11 @@ class CustomerController extends Controller
     }
     public function update(Customer $customer){
 
+        $data = request()->validate([
+            'name' => 'required | min:3',
+            'email' => 'required|email'
+        ]);
+        $customer->update($data);
+        return redirect('/customers/'.$customer->id);
     }
 }
