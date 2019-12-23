@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Customer;
 use App\Company;
+use App\Events\NewCustomerRegisteredEvent;
+use App\Mail\WelcomeNewUserMail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class CustomerController extends Controller
 {
@@ -31,7 +34,9 @@ class CustomerController extends Controller
             'active'=>'required',
             'company_id' =>'required'
             ]);
-        Customer::create($data);
+        $customer = Customer::create($data);
+        event(new NewCustomerRegisteredEvent($customer));
+
         return redirect('/customers');
     }
     public function show(Customer $customer){
