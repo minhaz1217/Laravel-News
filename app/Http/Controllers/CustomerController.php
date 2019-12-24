@@ -28,6 +28,7 @@ class CustomerController extends Controller
         return view("customers.create", compact('companies','customer'));
     }
     public function store(){
+        $this->authorize('create', Customer::class);
         $data = request()->validate([
             'name' => 'required | min:3',
             'email' => 'required|email',
@@ -59,6 +60,8 @@ class CustomerController extends Controller
         return redirect('/customers/'.$customer->id);
     }
     public function destroy(Customer $customer){
+
+        $this->authorize('delete', $customer);
         $customer->delete();
         return redirect('/customers');
     }

@@ -28,7 +28,7 @@ Route::get("/about2", ['uses' => 'AboutController@about2', 'as' =>'about']);
 Route::get("/customers", "CustomerController@index");
 Route::post( '/customers', 'CustomerController@store');
 Route::get("/customers/create", "CustomerController@create");
-Route::get( '/customers/{customer}', 'CustomerController@show');
+Route::get( '/customers/{customer}', 'CustomerController@show')->middleware('can:view,customer');
 Route::patch( '/customers/{customer}', 'CustomerController@update');
 Route::get( '/customers/{customer}/edit', 'CustomerController@edit')->middleware('auth');
 Route::delete( '/customers/{customer}', 'CustomerController@destroy')->middleware('auth');
